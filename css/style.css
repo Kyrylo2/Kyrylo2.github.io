@@ -323,6 +323,11 @@ p {
   .interest ul {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  #resume-button {
+    display: none;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -341,6 +346,7 @@ p {
   .skills .box {
     grid-template-columns: repeat(1, 1fr);
   }
+
 }
 
 .draw-border {
@@ -402,7 +408,6 @@ p {
   letter-spacing: 0.05rem;
   position: relative;
   display: flex;
-  align-items: center;
   margin: 0 auto;
 }
 
