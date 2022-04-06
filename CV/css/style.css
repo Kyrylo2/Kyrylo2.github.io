@@ -1,18 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  --color-primary: rgb(87, 117, 214);
+  --color-primary-background: rgb(87, 117, 214, 0.5);
+  --color-secondary: rgb(234 207 230);
+  --color-text-secondary: rgb(255, 169, 169);
+  --color-background: whitesmoke;
+  --color-text: whitesmoke;
+  --color-text-main: #454545;
+  --gradient-primary: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(182, 55, 152, 0.5) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Source Code Pro', monospace;
-
+  font-family: "Source Code Pro", monospace;
 }
 
 body {
-  background: linear-gradient(141deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(182, 55, 152, 0.5) 35%,
-      rgba(0, 212, 255, 1) 100%);
+  background: var(--gradient-primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,17 +37,17 @@ body {
   max-width: 1000px;
   min-height: 1000px;
   margin: 50px;
-  background: whitesmoke;
+  background: var(--color-background);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  box-shadow: 0px 0px 100px 50px rgba(87, 117, 214, 0.49);
-  -webkit-box-shadow: 0px 0px 100px 50px rgba(87, 117, 214, 0.49);
-  -moz-box-shadow: 0px 0px 100px 50px rgba(87, 117, 214, 0.49);
+  box-shadow: 0px 0px 100px 50px var(--color-primary-background);
+  -webkit-box-shadow: 0px 0px 100px 50px var(--color-primary-background);
+  -moz-box-shadow: 0px 0px 100px 50px var(--color-primary-background);
 }
 
 .conteiner .left_side {
   position: relative;
-  background: rgb(87, 117, 214);
+  background: var(--color-primary);
   padding: 40px;
 }
 
@@ -45,9 +57,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgb(234 207 230);
+  border-bottom: 1px solid var(--color-secondary);
 }
-
 
 .profileText .imgBx {
   width: 200px;
@@ -56,7 +67,7 @@ body {
   display: block;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid rgb(234 207 230);
+  border: 3px solid var(--color-secondary);
 }
 
 .profileText .imgBx img {
@@ -66,11 +77,10 @@ body {
   top: 0;
   left: 0;
   object-fit: cover;
-
 }
 
 .profileText h2 {
-  color: whitesmoke;
+  color: var(--color-background);
   font-size: 1.5em;
   margin-top: 20px;
   text-transform: capitalize;
@@ -80,7 +90,7 @@ body {
 }
 
 .profileText h2 span {
-  color: rgb(234 207 230);
+  color: var(--color-secondary);
   font-size: 0.8em;
   font-weight: 200;
 }
@@ -90,7 +100,7 @@ body {
 }
 
 .title {
-  color: whitesmoke;
+  color: var(--color-text);
   text-transform: capitalize;
   font-weight: 500;
   letter-spacing: 1px;
@@ -112,25 +122,25 @@ body {
   display: inline-block;
   font-size: 18px;
   width: 30px;
-  color: rgb(234 207 230);
+  color: var(--color-secondary);
   text-align: center;
   border-radius: 50%;
 }
 
-.contactInfo ul li:hover>.icon {
+.contactInfo ul li:hover > .icon {
   color: rgb(87, 117, 214);
-  background-color: rgb(234 207 230);
+  background-color: var(--color-secondary);
   transition: 1s;
 }
 
 .contactInfo ul li span {
-  color: whitesmoke;
+  color: var(--color-text);
   font-weight: 300;
   font-size: 0.8em;
 }
 
 a {
-  color: whitesmoke;
+  color: var(--color-text);
   text-decoration: none;
 }
 
@@ -140,20 +150,20 @@ a {
 }
 
 .contactInfo.education h5 {
-  color: rgb(234 207 230);
+  color: var(--color-secondary);
   font-weight: 300;
   line-height: 1.5em;
   font-size: 0.7em;
 }
 
 .contactInfo.education h4:nth-child(2) {
-  color: whitesmoke;
+  color: var(--color-text);
   font-weight: 500;
   font-size: 0.8em;
 }
 
 .contactInfo.education h4 {
-  color: whitesmoke;
+  color: var(--color-text);
   font-weight: 300;
   line-height: 1.2em;
   font-size: 0.7em;
@@ -162,7 +172,7 @@ a {
 
 .contactInfo.language table {
   position: relative;
-  color: whitesmoke;
+  color: var(--color-text);
   width: 100%;
   font-size: 0.8em;
   border-collapse: collapse;
@@ -170,22 +180,21 @@ a {
 
 .contactInfo.language td {
   padding: 1em;
-  border-bottom: 0.5px solid rgb(234 207 230);
+  border-bottom: 0.5px solid var(--color-secondary);
   text-align: center;
 }
 
-.contactInfo.language tr:hover>td {
-  background-color: rgb(234 207 230);
-  color: rgb(87, 117, 214);
+.contactInfo.language tr:hover > td {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
   transition: 1s;
 }
 
 .contactInfo.language .percent {
-
   position: relative;
   width: 100%;
   height: 6px;
-  background: rgb(165, 148, 148);
+  background: rgb(174, 174, 174);
   display: block;
   margin-top: 3px;
 }
@@ -195,12 +204,12 @@ a {
   top: 0;
   left: 0;
   height: 100%;
-  background: rgb(255, 169, 169);
+  background: var(--color-background);
 }
 
 .conteiner .right_side {
   position: relative;
-  background: whitesmoke;
+  background: var(--color-text);
   padding: 40px;
 }
 
@@ -219,7 +228,7 @@ a {
 }
 
 .title2 {
-  color: rgb(87, 117, 214);
+  color: var(--color-primary);
   text-transform: capitalize;
 
   font-weight: 600;
@@ -228,7 +237,7 @@ a {
 }
 
 p {
-  color: #454545;
+  color: var(--color-text-main);
   line-height: 1.2em;
   font-weight: 400;
 }
@@ -279,7 +288,7 @@ p {
   position: relative;
   width: 100%;
   height: 10px;
-  background: #dfdfdf
+  background: #dfdfdf;
 }
 
 .skills .box .percent div {
@@ -287,10 +296,12 @@ p {
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(141deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(182, 55, 152, 0.5) 35%,
-      rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(
+    141deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(182, 55, 152, 0.5) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 .interest ul {
@@ -327,7 +338,6 @@ p {
   #resume-button {
     display: none;
   }
-
 }
 
 @media (max-width: 600px) {
@@ -346,7 +356,6 @@ p {
   .skills .box {
     grid-template-columns: repeat(1, 1fr);
   }
-
 }
 
 .draw-border {
@@ -360,7 +369,7 @@ p {
 .draw-border::after {
   border: 0 solid transparent;
   box-sizing: border-box;
-  content: '';
+  content: "";
   pointer-events: none;
   position: absolute;
   width: 0;
